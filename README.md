@@ -1,12 +1,4 @@
-﻿---
-title: Focused Research Agent
-emoji: 🔍
-colorFrom: blue
-colorTo: green
-sdk: docker
-app_port: 7860
-pinned: false
----
+
 # 🔍 Focused Research Agent
 
 > 一个由 AI 驱动的研究助手，它可以规划、搜索并综合信息 —— 为你提供有来源的答案，而不是幻觉式的内容。
