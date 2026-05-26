@@ -11,24 +11,6 @@ pinned: false
 
 > 一个由 AI 驱动的研究助手，它可以规划、搜索并综合信息 —— 为你提供有来源的答案，而不是幻觉式的内容。
 
-[![Python 3.13](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/downloads/)
-[![LangGraph](https://img.shields.io/badge/LangGraph-1.0.10-green.svg)](https://langchain-ai.github.io/langgraph/)
-[![LangChain](https://img.shields.io/badge/LangChain-1.2.10-1C3C3C.svg)](https://python.langchain.com)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.135.3-009688.svg)](https://fastapi.tiangolo.com)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.52.2-FF4B4B.svg)](https://streamlit.io)
-[![SQLite](https://img.shields.io/badge/SQLite-SQLAlchemy_2.0-003B57.svg)](https://www.sqlalchemy.org)
-[![Groq](https://img.shields.io/badge/Groq-Llama_3.3_70B-orange.svg)](https://console.groq.com)
-[![Tavily](https://img.shields.io/badge/Tavily-0.7.22-purple.svg)](https://tavily.com)
-[![Ollama](https://img.shields.io/badge/Ollama-0.6.2-black.svg)](https://ollama.com)
-[![uv](https://img.shields.io/badge/uv-package_manager-DE5FE9.svg)](https://docs.astral.sh/uv/)
-[![Live Demo](https://img.shields.io/badge/Live_Demo-HuggingFace-yellow.svg)](https://tushark2111-focused-research-agent.hf.space)
-
-## 🚀 在线演示
-
-**[在此试用 → https://tushark2111-focused-research-agent.hf.space](https://tushark2111-focused-research-agent.hf.space)**
-
-无需安装。输入研究问题，然后观察代理如何工作。
-
 ---
 
 ## 🎯 项目功能
@@ -55,11 +37,11 @@ Structured Result       — 答案+引用内容+资料来源+配图
 
 提供三种模式：
 
-| 模式 | 功能 |
-|---|---|
-| **Quick Research** | 约 15 秒内返回 1-3 条引用的简明答案 |
-| **Conversational Chat** | 支持多轮研究，保留会话记忆 |
-| **Full Report** | 生成包含深入搜索和图片的结构化四部分报告 |
+| 模式                          | 功能                                     |
+| ----------------------------- | ---------------------------------------- |
+| **Quick Research**      | 约 15 秒内返回 1-3 条引用的简明答案      |
+| **Conversational Chat** | 支持多轮研究，保留会话记忆               |
+| **Full Report**         | 生成包含深入搜索和图片的结构化四部分报告 |
 
 ---
 
@@ -118,15 +100,15 @@ Structured Result       — 答案+引用内容+资料来源+配图
 
 ### 节点
 
-| 节点 | 功能 |
-|---|---|
-| `init_run` | 生成唯一 run ID，校验问题是否存在 |
-| `scope_question` | LLM 生成问题范围、假设和约束 |
-| `generate_queries` | LLM 生成 3-6 条针对性搜索查询 |
-| `search_web` | Tavily 执行所有查询，去重来源，收集图片 |
-| `synthesize_answer` | 按域名信任度排序来源，LLM 生成带引用的答案 |
-| `finalize_run` | 将运行标记为 `completed` 或 `error` |
-| `handle_error` | 终止错误节点 — 记录错误并设置状态为 `error` |
+| 节点                  | 功能                                           |
+| --------------------- | ---------------------------------------------- |
+| `init_run`          | 生成唯一 run ID，校验问题是否存在              |
+| `scope_question`    | LLM 生成问题范围、假设和约束                   |
+| `generate_queries`  | LLM 生成 3-6 条针对性搜索查询                  |
+| `search_web`        | Tavily 执行所有查询，去重来源，收集图片        |
+| `synthesize_answer` | 按域名信任度排序来源，LLM 生成带引用的答案     |
+| `finalize_run`      | 将运行标记为 `completed` 或 `error`        |
+| `handle_error`      | 终止错误节点 — 记录错误并设置状态为 `error` |
 
 ### 错误路由
 
@@ -138,21 +120,21 @@ Structured Result       — 答案+引用内容+资料来源+配图
 
 ## 🛠️ 技术栈
 
-| 技术 | 角色 | 说明 |
-|---|---|---|
-| **LangGraph** | 工作流编排 | 可确定、可复现的显式状态图 |
-| **FastAPI** | REST API 后端 | 现代 Python，内置验证和 DI |
-| **Pydantic** | 请求/响应验证 | 在 API 与应用层之间共享验证逻辑 |
-| **Groq + Llama** | LLM 提供器 | 推理速度快，免费额度充足 |
-| **Ollama** | 替代 LLM 提供器 | 支持本地或云端，无需 API key |
-| **Tavily** | 网络搜索 | 为 AI 代理设计，返回结构化结果和图片 |
-| **SQLAlchemy** | ORM | 从 SQLite 切换到 PostgreSQL 只需一行配置 |
-| **Streamlit** | Web UI | 快速构建 AI 应用界面 |
-| **httpx** | HTTP 客户端 | 现代 Python HTTP 客户端 |
-| **uv** | 包管理 | 快速、现代的 Python 包管理工具 |
-| **pytest** | 测试 | 175 个测试，覆盖多种策略 |
-| **Ruff** | 代码格式化与 lint | 快速、现代的 Python 代码检查工具 |
-| **SonarCloud** | 代码质量门禁 | 持续覆盖率与质量检查 |
+| 技术                   | 角色              | 说明                                     |
+| ---------------------- | ----------------- | ---------------------------------------- |
+| **LangGraph**    | 工作流编排        | 可确定、可复现的显式状态图               |
+| **FastAPI**      | REST API 后端     | 现代 Python，内置验证和 DI               |
+| **Pydantic**     | 请求/响应验证     | 在 API 与应用层之间共享验证逻辑          |
+| **Groq + Llama** | LLM 提供器        | 推理速度快，免费额度充足                 |
+| **Ollama**       | 替代 LLM 提供器   | 支持本地或云端，无需 API key             |
+| **Tavily**       | 网络搜索          | 为 AI 代理设计，返回结构化结果和图片     |
+| **SQLAlchemy**   | ORM               | 从 SQLite 切换到 PostgreSQL 只需一行配置 |
+| **Streamlit**    | Web UI            | 快速构建 AI 应用界面                     |
+| **httpx**        | HTTP 客户端       | 现代 Python HTTP 客户端                  |
+| **uv**           | 包管理            | 快速、现代的 Python 包管理工具           |
+| **pytest**       | 测试              | 175 个测试，覆盖多种策略                 |
+| **Ruff**         | 代码格式化与 lint | 快速、现代的 Python 代码检查工具         |
+| **SonarCloud**   | 代码质量门禁      | 持续覆盖率与质量检查                     |
 
 ---
 
@@ -228,13 +210,12 @@ focused-research-agent/
 
 - Python 3.13
 - [uv](https://docs.astral.sh/uv/) 包管理器
-- Groq API key — [console.groq.com](https://console.groq.com)（免费层）
-- Tavily API key — [tavily.com](https://tavily.com)（免费层）
+- Tavily API key — [tavily.com](https://tavily.com)（免费）
 
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/tusharkhoche/focused-research-agent.git
+git clone https://github.com/DSA-afk/deep-research-agent.git
 cd focused-research-agent
 ```
 
@@ -334,16 +315,17 @@ uv run pytest --cov=src/focused_research_agent --cov-report=term-missing -v
 
 ### 测试策略
 
-| 测试文件 | 策略 |
-|---|---|
-| `test_nodes_unit.py` | 使用 fake provider 单独隔离测试每个节点 |
-| `test_nodes_smoke.py` | 使用 fake provider 进行完整图端到端测试 |
-| `test_graph_error_paths.py` | 空问题条件路由测试 |
-| `test_providers_unit.py` | Groq、Ollama、Tavily 的 fake SDK 客户端测试 |
-| `test_api_*.py` | FastAPI TestClient + dependency_overrides |
-| `test_database_repository.py` | 内存 SQLite |
-| `test_*_use_case.py` | fake graph + 内存 SQLite |
-| `test_ui_api_client.py` | fake httpx 模块 |
+| 测试文件                        | 策略                                        |
+| ------------------------------- | ------------------------------------------- |
+| `test_nodes_unit.py`          | 使用 fake provider 单独隔离测试每个节点     |
+| `test_nodes_smoke.py`         | 使用 fake provider 进行完整图端到端测试     |
+| `test_graph_error_paths.py`   | 空问题条件路由测试                          |
+| `test_providers_unit.py`      | Groq、Ollama、Tavily 的 fake SDK 客户端测试 |
+| `test_api_*.py`               | FastAPI TestClient + dependency_overrides   |
+| `test_database_repository.py` | 内存 SQLite                                 |
+| `test_*_use_case.py`          | fake graph + 内存 SQLite                    |
+| `test_ui_api_client.py`       | fake httpx 模块                             |
+
 ```
 
 ---
@@ -353,6 +335,7 @@ uv run pytest --cov=src/focused_research_agent --cov-report=term-missing -v
 ### 接口列表
 
 ```
+
 GET  /health
 POST /api/v1/research
 POST /api/v1/chat
@@ -360,6 +343,7 @@ POST /api/v1/report
 GET  /api/v1/conversations
 GET  /api/v1/conversations/{id}
 GET  /api/v1/reports
+
 ```
 
 ### 响应格式
@@ -413,14 +397,14 @@ GET  /api/v1/reports
 
 ## 📈 代码质量
 
-| 指标 | 数值 |
-|--------------------|---|
-| 测试 | **175 通过** |
-| Sonar Quality Gate | [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=alert_status&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent) |
-| 代码重复率 | [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=duplicated_lines_density&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent) |
-| 可维护性 | [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=sqale_rating&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent) |
-| Bugs | [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=bugs&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent) |
-| 可靠性 | [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=reliability_rating&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent)|
+| 指标               | 数值                                                                                                                                                                                                                                                                             |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 测试               | **175 通过**                                                                                                                                                                                                                                                               |
+| Sonar Quality Gate | [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=alert_status&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent)              |
+| 代码重复率         | [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=duplicated_lines_density&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent) |
+| 可维护性           | [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=sqale_rating&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent)           |
+| Bugs               | [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=bugs&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent)                                     |
+| 可靠性             | [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=reliability_rating&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent)         |
 
 ---
 
@@ -429,18 +413,21 @@ GET  /api/v1/reports
 ### 该项目已具备的生产级特性
 
 **可靠性** ✅
+
 - 基于状态的错误路由 — 图不会崩溃，总是干净终止
 - `handle_error` 节点捕获所有失败路径
 - 非阻塞持久化 — 数据库失败不会直接终止研究结果
 - 每个边界都有输入验证
 
 **可观测性** ✅
+
 - 日志带有 `run_id`，便于完整运行追踪
 - 日志级别使用合理 — DEBUG 用于读取，INFO 用于流程，WARNING 用于可恢复问题，ERROR 用于失败
 - 配置了循环文件日志
 - CI 中使用 SonarCloud 质量门禁
 
 **可维护性** ✅
+
 - 六个清晰分层、各司其职
 - Repository Pattern — 数据库逻辑仅在一个文件中
 - 提供器抽象 — 用一个环境变量即可替换 LLM 或搜索提供器
@@ -449,6 +436,7 @@ GET  /api/v1/reports
 - 强制使用 Ruff 格式化和 lint
 
 **自动化测试** ✅
+
 - 包含单元、集成、API、冒烟和图错误路径测试
 - 使用内存 SQLite 进行测试隔离
 - SonarCloud 覆盖率门禁
@@ -458,23 +446,27 @@ GET  /api/v1/reports
 ### 真正缺少以满足纯生产级的部分
 
 **安全性** ❌
+
 - API 接口没有认证
 - 没有限流 — 单个调用可能耗尽 Groq/Tavily 配额
 - 没有 HTTPS 强制
 - API key 需要迁移到机密管理器（如 AWS Secrets Manager、Azure Key Vault）
 
 **可扩展性** ⚠️
+
 - SQLite 仅支持单写；需要 PostgreSQL 才能支持并发用户（.env 中一行即可切换）
 - 同步 FastAPI 端点会阻塞 worker 线程，长时间研究任务需要队列（如 Celery + Redis）
 - 没有缓存 — 相同问题每次都会调用 Tavily 和 Groq
 
 **监控** ⚠️
+
 - 没有分布式追踪（OpenTelemetry）
 - 没有指标仪表盘（Prometheus、Grafana）
 - 没有提供故障告警
 - 日志写入循环文件，生产环境应使用集中式日志聚合系统（Datadog、CloudWatch、ELK）
 
 **可靠性** ⚠️
+
 - 没有 Tavily 失败的重试逻辑
 - 没有提供器故障时的断路器
 - 没有对运行中研究任务的优雅关闭处理
@@ -489,13 +481,14 @@ GET  /api/v1/reports
 
 ## 🗺️ Roadmap
 
-- [x] Phase 1 — Core LangGraph workflow + FastAPI backend
-- [x] Phase 2 — Streamlit UI + UX polish
-- [x] Phase 3 — Conversational research with SQLite persistence
-- [x] Phase 4 — Full structured report generation mode
-- [x] Phase 5 — Image rendering from Tavily search results
+- [X] Phase 1 — Core LangGraph workflow + FastAPI backend
+- [X] Phase 2 — Streamlit UI + UX polish
+- [X] Phase 3 — Conversational research with SQLite persistence
+- [X] Phase 4 — Full structured report generation mode
+- [X] Phase 5 — Image rendering from Tavily search results
 
 **潜在后续步骤：**
+
 - 异步 FastAPI 端点以实现非阻塞长任务
 - PostgreSQL 以支持多用户生产部署
 - 任务队列（Celery + Redis）用于报告生成
