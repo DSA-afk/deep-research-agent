@@ -392,12 +392,6 @@ GET  /api/v1/reports
 | 指标               | 数值                                                                                                                                                                                                                                                                             |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 测试               | **175 通过**                                                                                                                                                                                                                                                               |
-| Sonar Quality Gate | [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=alert_status&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent)              |
-| 代码重复率         | [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=duplicated_lines_density&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent) |
-| 可维护性           | [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=sqale_rating&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent)           |
-| Bugs               | [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=bugs&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent)                                     |
-| 可靠性             | [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=tusharkhoche_focused-research-agent&metric=reliability_rating&token=718dd7470a62c68bd770e36c666f393d1c3d5fe1)](https://sonarcloud.io/summary/new_code?id=tusharkhoche_focused-research-agent)         |
-
 ---
 
 ## 🏭 生产级别 — 诚实评估
